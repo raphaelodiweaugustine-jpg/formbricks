@@ -256,6 +256,9 @@ export const UploadContactsCSVButton = ({
       return;
     }
 
+    // FALLBACK INTERCEPTOR FOR INTERNAL SERVER ERRORS (HTTP 500)
+    setError(t("workspace.contacts.upload_contacts_error_generic"));
+    toast.error(t("workspace.contacts.upload_contacts_error_generic"));
     setLoading(false);
   };
 
